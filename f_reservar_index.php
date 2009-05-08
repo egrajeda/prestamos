@@ -17,6 +17,8 @@ if ($vista->dia == 5) {
 } elseif ($vista->dia == 1) {
   $fecha_inicio = date('Y-m-d', strtotime('+0 days'));
   $fecha_final  = date('Y-m-d', strtotime('+6 days'));
+} else {
+  $vista->otrodia = true;
 }
 
 /* Cargamos las solicitudes de esta semana para mostrarlas */

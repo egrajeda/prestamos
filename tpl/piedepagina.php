@@ -8,7 +8,9 @@
           <span>Regresar</span>
         </a>    
 <?php } ?>        
+<?php if ($vista->usuario) { ?>
       <br /><br />
+<?php } ?>
       </div>      
     </div>
   </body>

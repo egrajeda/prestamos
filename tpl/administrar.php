@@ -14,7 +14,15 @@
       <td>Laptop</td>
       <td>Local</td>
     </tr>
-  <?php if ($vista->vacio) { ?>
+  <?php if (isset($vista->otrodia)) { ?>    
+    <tr>
+      <td colspan="8" align="center">
+        <div class="advertencia">
+          <span>Solamente se pueden administrar las solicitudes el dia <b>lunes</b>.</span>
+        </div>          
+      </td>
+    </tr>    
+  <?php } elseif ($vista->vacio) { ?>
     <tr>
       <td colspan="8" align="center">
         <div class="advertencia">
@@ -104,9 +112,14 @@
     <?php } ?>
   <?php } ?>
   </table>
+  <br />
+  <?php if (isset($vista->otrodia)) { ?>
+  <del class="button"><span>Guardar modificaciones</span></del>
+  <?php } else { ?>  
   <span class="button">
     <button type="submit" value="Guardar modificaciones">Guardar modificaciones</button>
   </span>
+  <?php } ?>
   </form>      
 </center>
 <br />

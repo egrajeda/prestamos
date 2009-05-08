@@ -1,5 +1,5 @@
 <center>
-<?php if ($vista->dia == 5 || $vista->dia == 1) { ?>
+<?php if (!isset($vista->otrodia)) { ?>
   <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar equipo</span></a> 
 <?php } else { ?>  
   <del class="button"><span>Agregar equipo</span></del>
@@ -16,7 +16,15 @@
     <td width="12%">Local</td>
     <td width="23%">&nbsp;</td>
   </tr>
-<?php if (!$vista->solicitudes) { ?>
+<?php if (isset($vista->otrodia)) { ?>
+  <tr>
+    <td colspan="7" align="center">
+      <div class="advertencia">
+        <span>Solamente puede manejar solicitudes los dias <b>viernes</b> y <b>sábados</b>.</span>
+      </div>          
+    </td>
+  </tr>
+<?php } elseif (!$vista->solicitudes) { ?>
   <tr>
     <td colspan="7" align="center">
       <div class="advertencia">

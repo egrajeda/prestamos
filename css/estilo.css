@@ -127,6 +127,11 @@ h2 {
   text-align: center;
 }
 
+.ui-datepicker .ui-state-active {
+  background: #ffd216;
+  border: 1px solid #d5a13d;
+}
+
 .reporte {
   width: 95%;
 }
@@ -155,8 +160,4 @@ h2 {
 
 .reporte .segundo td {
   border-bottom: 1px solid #ddd;
-}
-
-.reporte .asignar {
-
 }
