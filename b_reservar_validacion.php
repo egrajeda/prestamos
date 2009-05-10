@@ -36,6 +36,21 @@ if ($fecha == '') {
   $vista->error = 'Debe de seleccionar una fecha válida.';
   return;
 } 
+/* Validamos que la fecha este en el rango permitido */
+$fecha2 = strtotime($fecha);
+if ($dia == 5) {
+  if (strtotime(date('Y-m-d', strtotime('+3 days'))) > $fecha2 || 
+      strtotime(date('Y-m-d', strtotime('+9 days'))) < $fecha2) {
+    $vista->error = 'La fecha se encuentra fuera del rango permitido.';
+    return;
+  }
+} else {
+  if (strtotime(date('Y-m-d', strtotime('+2 days'))) > $fecha2 || 
+      strtotime(date('Y-m-d', strtotime('+8 days'))) < $fecha2) {
+    $vista->error = 'La fecha se encuentra fuera del rango permitido.';
+    return;
+  }
+}
 /* Tiene que elegir un equipo a elegir */
 if (!$canon && !$laptop) {
   $vista->error = 'Debe de seleccionar al menos un equipo para realizar la solicitud.';

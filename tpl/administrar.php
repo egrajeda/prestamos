@@ -42,7 +42,7 @@
         <?php echo date('h:i a', strtotime($solicitud['hora_devolucion'])) ?>        
       </td>        
       <td align="center"><?php echo ucfirst($solicitud['departamento']) ?></td>
-      <td align="center"><?php echo $solicitud['usuario'] ?></td>
+      <td align="center"><?php echo $solicitud['nombre'] . ' ' . $solicitud['apellido'] ?></td>
       <td align="center"><?php echo $solicitud['descripcion'] ?></td>
       <td align="center">
         <?php if($solicitud['canon']) { ?>

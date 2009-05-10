@@ -16,11 +16,14 @@ $vista->regresar = 'mod=reservar';
 $vista->boton  = 'Agregar solicitud';
 $vista->accion = 'agregar';
 
-/* Ponemos la fecha por default que va a aparecer señalada */
-if ($dia == 5) {
-  $vista->fecha = date('Y-m-d', strtotime('+3 days'));
-} else {
-  $vista->fecha = date('Y-m-d', strtotime('+2 days'));
+/* Ponemos la fecha por default que va a aparecer señalada, si no esta puesta
+ * todavia */
+if (!isset($vista->fecha)) {
+  if ($dia == 5) {
+    $vista->fecha = date('Y-m-d', strtotime('+3 days'));
+  } else {
+    $vista->fecha = date('Y-m-d', strtotime('+2 days'));
+  }
 }
 
 presentar('reservar_formulario');

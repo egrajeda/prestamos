@@ -42,8 +42,8 @@ $vista->encabezado = 'Modificar solicitud de equipo';
 
 /* Si queremos mostrar el boton de regresar y otras cosas*/
 $vista->regresar = 'mod=reservar';
-$vista->boton  = 'Modificar solicitud';
-$vista->accion = 'modificar';
+$vista->boton    = 'Modificar solicitud';
+$vista->accion   = 'modificar';
 
 presentar('reservar_formulario');
 ?>
