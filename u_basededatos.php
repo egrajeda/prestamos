@@ -7,14 +7,28 @@
  * Se debe de usar la función query() para cualquier cosa, y no directamente
  * la clase.
  */
+ 
+ query('select * from `usuarios`', array());
 
-/* Esta funcion es auxiliar y es una mezcla de mysql_query() con sprintf() */
+/* Esta funcion es auxiliar y es una mezcla de mysql_query() con sprintf(), una
+ * forma de usarlo sería por ejemplo:
+ *
+ *   query("select * from `usuarios` where `user` = ':user'", 
+ *     array(":user" => 'walter.sanchez'));
+ *
+ * Sustituiría todas las ocurrencias de ':user' con 'walter.sanchez'.
+ */
 function query($str, $datos) {
   $bd = BaseDeDatos::getInstancia();    
   foreach ($datos as $viejo => $nuevo) {
     $str = str_replace($viejo, $nuevo, $str);
   }  
-  return $bd->query($str);
+  $qr = $bd->query($str);
+  if (!$qr) {
+    die(mysql_error());
+  }
+  print 'hola';
+  return $qr;
 }
 
 class BaseDeDatos {
@@ -37,7 +51,7 @@ class BaseDeDatos {
     
   /* El constructor, aqui nos conectamos a la base de datos */
   private function __construct() {
-    $this->db = mysql_connect($this->host, $this->user, $this->pass);
+    $this->db = @mysql_connect($this->host, $this->user, $this->pass);
     if (!$this->db) {
       return;
     }
@@ -48,7 +62,7 @@ class BaseDeDatos {
 
   /* Cerramos la conexion con la base de datos */
   public function __destruct() {
-    mysql_close($this->db);
+    @mysql_close($this->db);
   }
   
   /* La función principal de un Singleton, que sirve para obtener la 
@@ -62,7 +76,7 @@ class BaseDeDatos {
   
   /* Un metodo para englobar el mysql_query() */
   public function query($str) {
-    return mysql_query($str, $this->db);      
+    return @mysql_query($str, $this->db);      
   }
 };
 
