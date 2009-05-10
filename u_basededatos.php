@@ -8,8 +8,6 @@
  * la clase.
  */
  
- query('select * from `usuarios`', array());
-
 /* Esta funcion es auxiliar y es una mezcla de mysql_query() con sprintf(), una
  * forma de usarlo sería por ejemplo:
  *
@@ -23,12 +21,11 @@ function query($str, $datos) {
   foreach ($datos as $viejo => $nuevo) {
     $str = str_replace($viejo, $nuevo, $str);
   }  
-  $qr = $bd->query($str);
-  if (!$qr) {
+  $query = $bd->query($str);
+  if (!$query) {
     die(mysql_error());
   }
-  print 'hola';
-  return $qr;
+  return $query;
 }
 
 class BaseDeDatos {
