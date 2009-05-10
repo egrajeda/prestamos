@@ -1,10 +1,13 @@
 <?php
-include_once('u_plantilla.php');
+include_once('u_sesiones.php');
+include_once('u_asignador.php');
 
-/* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
-$vista->encabezado = 'Iniciar sesión';
-
-/* Lo primero que hacemos es dejar al usuario iniciar sesion */
-presentar('login');
+$nivel = getNivel();
+if ($nivel == 'administrador') {
+  asignar('administrar');
+} elseif ($nivel == 'normal') {
+  asignar('reservar');  
+} else {
+  asignar('login');
+}
 ?>

@@ -1,5 +1,8 @@
 <?php
 session_start();
-?>
 
-login.php?act=login
+function getNivel() {
+  return $_SESSION['nivel'];
+}
+
+?>

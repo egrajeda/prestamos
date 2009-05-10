@@ -41,6 +41,7 @@ body, td {
 }
 
 .error {
+  visibility: hidden;
   margin: 15px 0 0 0;
 }
 
