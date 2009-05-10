@@ -1,0 +1,59 @@
+body {
+  margin: 25px;
+  background: url('../img/mosaicobg.jpg');
+}    
+
+body, td {
+  font-size: 14px;
+  font-family: arial, sans-serif;      
+  line-height: 20px;
+}
+
+#contenedor {
+  border: 1px solid #000;
+  background: #fff;    
+}
+
+#encabezado {
+  background: url('../img/headerbg.jpg') repeat-x;
+  border-bottom: 20px solid #ffd216;
+}
+
+#logo {
+  height: 82px;
+  background: url('../img/headerUDB25years.jpg') right no-repeat;
+}
+
+#contenido {
+  padding: 10px;
+}
+    
+.form .input {
+  padding: 5px;
+  height: 27px;
+  border: 1px solid #dfdfdf;
+  background: #f5f5f5;
+}  
+
+.form .input-highlight {
+  border: 1px solid #73a6ff;
+  background: #eff5ff;
+}
+
+.error {
+  margin: 15px 0 0 0;
+}
+
+.error span {
+  padding: 0 0 0 20px;
+  color: #cc0000;
+  background: url('../img/exclamation.png') no-repeat;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  padding: 10px 0 10px 10px;
+  font-size: 24px;
+  font-weight: normal;
+  border-bottom: 5px solid #f0f0f0;
+}
