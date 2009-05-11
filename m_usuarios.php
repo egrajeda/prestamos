@@ -7,11 +7,11 @@
 include_once('u_basededatos.php');
   
 class Usuarios { 
-  public function getClave($usuario) {
-    $query = query("select `clave` from `usuarios` where `usuario` = ':usuario'",
+  public function getClaveYNivel($usuario) {
+    $query = query("select `clave`, `nivel` from `usuarios` where `usuario` = ':usuario'",
       array(':usuario' => $usuario));  
     $clave = mysql_fetch_row($query);
-    return $clave[0];
+    return $clave;
   } 
 } 
 

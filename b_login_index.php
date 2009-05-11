@@ -6,7 +6,7 @@ $usuario = trim($_POST['usuario']);
 $clave = trim($_POST['clave']);
 
 /* Obtenemos la contraseña de este usuario */
-$clave_bd = $usuarios->getClave($usuario);
+list($clave_bd, $nivel_bd) = $usuarios->getClaveYNivel($usuario);
 
 /* Revisamos si existe */
 if (!$clave_bd) {
@@ -21,7 +21,7 @@ if ($clave_bd != md5($clave)) {
 }
 
 /* Si llegamos hasta aqui es porque todo esta bueno, creamos la sesion */
-$_SESSION['nivel'] = 'normal';
+$_SESSION['nivel'] = $nivel_bd;
 
 /* Enviamos de regreso al index, porque ahora si ha iniciado sesion, y debe
  * de ir a parar a otro lado */

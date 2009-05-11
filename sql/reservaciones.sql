@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,	
   `usuario` varchar(20) NOT NULL,
   `clave` varchar(32) NOT NULL,
-  `departamento` varchar(20) NOT NULL,	
+  `departamento` varchar(20) NOT NULL,
+  `nivel` varchar(13) NOT NULL,	
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `usuario` (`usuario`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -38,15 +39,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Volcar la base de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario`, `clave`,`departamento`) VALUES
-('pati', '42c3392a91aad6c9e55790c9193ddc94','administracion'),
-('jaime.anaya', '7a935c859f787e9d9a8d6344eec4f1dd','computacion'),
-('raul.martinez', '98db6b11ffb2742f823992e290e04c53','computacion'),
-('walter.sanchez', '9296555dc5df62f70a22ef4816cc0bab','computacion'),
-('melvin.carias', 'pc20062670112c17c6c4217e6303f822d4ae73','computacion'),
-('yenny.artiga', 'd5ed9aa3fcd3ef0fde808f37b9e17bcf','computacion'),
-('iris.abarca', 'fc0a9ef8fa66219c5f5d81cb614ebfb2','computacion'),
-('milton.narvaez', '9350c0880a346ac5be67e3b729c1ba54','computacion');
+INSERT INTO `usuarios` (`usuario`, `clave`,`departamento`, `nivel`) VALUES
+('pati', '42c3392a91aad6c9e55790c9193ddc94','administracion', 'administrador'),
+('jaime.anaya', '7a935c859f787e9d9a8d6344eec4f1dd','computacion', 'normal'),
+('raul.martinez', '98db6b11ffb2742f823992e290e04c53','computacion', 'normal'),
+('walter.sanchez', '9296555dc5df62f70a22ef4816cc0bab','computacion', 'normal'),
+('melvin.carias', 'pc20062670112c17c6c4217e6303f822d4ae73','computacion', 'normal'),
+('yenny.artiga', 'd5ed9aa3fcd3ef0fde808f37b9e17bcf','computacion', 'normal'),
+('iris.abarca', 'fc0a9ef8fa66219c5f5d81cb614ebfb2','computacion', 'normal'),
+('milton.narvaez', '9350c0880a346ac5be67e3b729c1ba54','computacion', 'normal');
 -- udb2009
 -- pc2009
 -- pc2008

@@ -1,9 +1,10 @@
 <?php
+session_start();
+session_destroy();
 $dia=date("l");
 if($dia=="Saturday"||$dia=="Friday"||$dia='Sunday'){
     ?>
-<center>UNIVERSIDAD DON BOSCO</center>
-<center>SOLICITUD DE RECURSO AUDIOVISUAL</center>
+<center><h2>SOLICITUD DE RECURSO AUDIOVISUAL</h2></center>
 <br>
 <form action="reservacion.php" method="post">
     <table class="" border="2">
