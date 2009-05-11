@@ -69,6 +69,11 @@
 <?php }?>
       <td colspan="5" align="right">Asignar cañon:</td>
       <td colspan="2">
+        <?php if (isset($vista->conflictosCanon[$solicitud['id_reserva']])) { ?>
+        <span class="conflicto">        
+        <?php } else { ?>
+        <span>
+        <?php } ?>           
         <select name="canon[<?php echo $solicitud['id_reserva'] ?>]">
           <option value="-1">- Sin asignar -</option>
           <?php foreach ($vista->canones as $canones) { ?>
@@ -81,6 +86,7 @@
           </option>
           <?php } ?>         
         </select>      
+        </span>
       </td>
     </tr>
 <?php if ($h) { ?>
@@ -90,6 +96,11 @@
 <?php } $h = !$h; ?>
       <td colspan="5" align="right">Asignar laptop:</td>
       <td colspan="2">
+        <?php if (isset($vista->conflictosLaptop[$solicitud['id_reserva']])) { ?>
+        <span class="conflicto">        
+        <?php } else { ?>
+        <span>
+        <?php } ?>     
         <select name="laptop[<?php echo $solicitud['id_reserva'] ?>]">
           <option value="-1">- Sin asignar -</option>
           <?php foreach ($vista->laptops as $laptops) { ?>
@@ -101,7 +112,8 @@
             <?php echo $laptops['nombre'] ?>
           </option>
           <?php } ?>         
-        </select>           
+        </select>  
+        </span>
       </td>
     </tr>
     <?php } ?>

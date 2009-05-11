@@ -16,6 +16,8 @@ foreach ($canones as $reserva => $canon) {
 }
 
 /* En la segunda, ya asignamos de verdad, verificando los conflictos */
+$vista->conflictosCanon  = array();
+$vista->conflictosLaptop = array();
 foreach ($canones as $reserva => $canon) {
   if ($canon != -1) {
     /* Deben de haber 0 reservas con este canon asignado en este intervalo de
@@ -25,6 +27,8 @@ foreach ($canones as $reserva => $canon) {
       $reservas->setReservaCanon($reserva, $canon);    
     } else {
       $vista->error = 'Algunas de las asignaciones no se pudieron llevar a cabo debido a conflictos en su disponibilidad.';
+      /* En la vista mostramos un (!) donde hubo problemas */
+      $vista->conflictosCanon[$reserva] = true;
     }
   }
   if ($laptops[$reserva] != -1) {
@@ -35,6 +39,8 @@ foreach ($canones as $reserva => $canon) {
       $reservas->setReservaLaptop($reserva, $laptops[$reserva]);    
     } else {
       $vista->error = 'Algunas de las asignaciones no se pudieron llevar a cabo debido a conflictos en su disponibilidad.';
+      /* En la vista mostramos un (!) donde hubo problemas */
+      $vista->conflictosLaptop[$reserva] = true;
     }
   }
 }
