@@ -22,7 +22,10 @@ if ($descripcion == '' || $hora_inicio == '' ||
   return;
 } else if ($hora_inicio >= $hora_final) {
   $vista->error = 'Las horas de préstamo y devolución son inválidas.';
+  return;
 }
+
+/* La insertamos en la base de datos */
 
 
 ?>

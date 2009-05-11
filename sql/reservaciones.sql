@@ -91,23 +91,26 @@ CREATE TABLE IF NOT EXISTS `reservaciones` (
   `fecha_reserva` datetime NOT NULL,
   `hora_prestamo` time NOT NULL,
   `hora_devolucion` time NOT NULL,
-  `materia` varchar(20) NOT NULL,
   `aula` varchar(8) NOT NULL,
   `descripcion` varchar(30) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_equipo` int(11) NOT NULL,	
+  `canon` int NOT NULL,
+  `laptop` int NOT NULL,
+  `id_canon` int(11) DEFAULT NULL,
+  `id_laptop` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_reserva`),
   KEY `FK_Reservaciones_id_user` (`id_user`),
-  KEY `FK_Reservaciones_id_equipo` (`id_equipo`)
+  KEY `FK_Reservaciones_id_canon` (`id_canon`),
+  KEY `FK_Reservaciones_id_laptop` (`id_laptop`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `reservaciones`
 --
 
-INSERT INTO `reservaciones` (`fecha_reserva`, `hora_prestamo`, `hora_devolucion`, `materia`, `aula`, `descripcion`, `id_user`, `id_equipo`) VALUES
-('2009/05/13', '08:00:00', '09:00:00', 'PHP', 'C-33', 'Clases', 4, 1),
-('2009/05/14', '10:00:00', '11:00:00', 'SQL', 'C-34', 'Defensa Proyecto', 7, 3);
+--INSERT INTO `reservaciones` (`fecha_reserva`, `hora_prestamo`, `hora_devolucion`, `materia`, `aula`, `descripcion`, `id_user`, `id_equipo`) VALUES
+--('2009/05/13', '08:00:00', '09:00:00', 'PHP', 'C-33', 'Clases', 4, 1),
+--('2009/05/14', '10:00:00', '11:00:00', 'SQL', 'C-34', 'Defensa Proyecto', 7, 3);
 
 -- --------------------------------------------------------
 
