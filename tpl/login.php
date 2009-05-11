@@ -1,4 +1,6 @@
 <center>
+  <form id="form" method="post" action="index.php">
+  <input type="hidden" name="backend" value="1" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
       <td width="30%" align="right">Usuario:</td>
@@ -13,10 +15,11 @@
     <tr>
       <td></td>
       <td>
-        <a class="button" href="#"><span>Iniciar sesión</span></a> 
+        <a class="button submit" href="#"><span>Iniciar sesión</span></a> 
       </td>
     </tr>
   </table>
+  </form>
   <div class="error">
     <span>La información introducida es incorrecta.</span>
   </div>        
