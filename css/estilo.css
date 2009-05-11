@@ -63,6 +63,16 @@ body, td {
   background: url('../img/exclamation.png') no-repeat;
 }
 
+.advertencia {
+  margin: 5px 0 0 0;
+}
+
+.advertencia span {
+  padding: 0 0 0 21px;
+  color: #d5a13d;
+  background: url('../img/error.png') no-repeat 0 -1px;
+}
+
 h1 {
   margin: 0 0 20px 0;
   padding: 15px 10px 10px 0;

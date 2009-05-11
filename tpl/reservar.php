@@ -16,6 +16,15 @@
     <td width="12%">Local</td>
     <td width="23%">&nbsp;</td>
   </tr>
+<?php if (!$vista->solicitudes) { ?>
+  <tr>
+    <td colspan="7" align="center">
+      <div class="advertencia">
+        <span>No ha creado ninguna solicitud para esta semana.</span>
+      </div>          
+    </td>
+  </tr>
+<?php } ?>  
 <?php $h = false; foreach($vista->solicitudes as $solicitud) { ?>  
 <?php if ($h) { ?>
   <tr class="h">  
