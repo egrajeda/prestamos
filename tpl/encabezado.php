@@ -15,8 +15,10 @@
         <div id="logo"></div>        
       </div>
       <div id="contenido">
+<?php if ($vista->usuario) { ?>      
         <div id="info">
           <span class="facultad">Facultad de Ingeniería</span><br />
-          <span class="usuario">walter.sanchez</span>
+          <span class="usuario"><?php echo $vista->usuario ?></span>
         </div>      
+<?php } ?>        
         <h1><?php echo $vista->encabezado ?></h1>

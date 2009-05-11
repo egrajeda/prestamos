@@ -1,11 +1,3 @@
-<div class="facultad">Facultad de Ingeniería</div>
-<div class="usuario">Usuario: walter.sanchez</div>
-
-<h2>Facultad de Ingeniería</h2>
-<h2>Usuario: walter.sanchez</h2>
-
-
-
 
 
 <br /><br /><br /><br />

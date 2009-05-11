@@ -22,6 +22,7 @@ if ($clave_bd != md5($clave)) {
 
 /* Si llegamos hasta aqui es porque todo esta bueno, creamos la sesion */
 $_SESSION['nivel'] = $nivel_bd;
+$_SESSION['usuario'] = $usuario;
 
 /* Enviamos de regreso al index, porque ahora si ha iniciado sesion, y debe
  * de ir a parar a otro lado */
