@@ -1,3 +1,14 @@
+<div class="facultad">Facultad de Ingeniería</div>
+<div class="usuario">Usuario: walter.sanchez</div>
+
+<h2>Facultad de Ingeniería</h2>
+<h2>Usuario: walter.sanchez</h2>
+
+
+
+
+
+<br /><br /><br /><br />
 <?php
 $dia=date("l");
 if($dia=="Saturday"||$dia=="Friday"||$dia='Sunday'){
@@ -49,7 +60,7 @@ if($dia=="Saturday"||$dia=="Friday"||$dia='Sunday'){
                 </select>
             </td>
             <td>
-                JAVASCRIPT
+                <input type="text" name="date" id="date" />
             </td>
             <td>
             <input type="checkbox" name="canon">

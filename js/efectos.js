@@ -8,4 +8,5 @@ $(document).ready(function() {
   $('.submit').click(function() {
     $('#form').submit();
   });
+  $('#date').datepicker();
 });

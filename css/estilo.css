@@ -53,10 +53,36 @@ body, td {
 
 h1 {
   margin: 0 0 10px 0;
-  padding: 10px 0 10px 10px;
+  padding: 15px 10px 10px 0;
   font-size: 24px;
   font-weight: normal;
   border-bottom: 5px solid #f0f0f0;
+}
+
+#info {
+  float: right;
+  text-align: right;
+}
+
+#info span {
+  font-size: 13px;
+  padding: 0 20px 0 0;
+}
+
+#info .facultad {
+  background: url('../img/house.png') no-repeat right -1px;
+}
+
+#info .usuario {
+  background: url('../img/user.png') no-repeat right -1px;
+}
+
+h2 {
+  margin: 0;
+  padding: 0 0 5px 10px;
+  font-weight: normal;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .logout {
@@ -65,4 +91,14 @@ h1 {
 
 .clear {
   clear: both;
+}
+
+.ui-datepicker, .ui-datepicker td {
+  font-size: 10px;
+  font-family: arial, sans-serif;
+}
+
+.ui-datepicker td a {
+  padding: 0 2px 0 0;
+  line-height: 16px;  
 }
