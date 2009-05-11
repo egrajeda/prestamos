@@ -1,6 +1,6 @@
 <?php
 session_destroy();
 
-/* Redireccionamos a la página principal */
+/* Lo redireccionamos a la pagina inicial */
 header('Location: index.php');
 ?>

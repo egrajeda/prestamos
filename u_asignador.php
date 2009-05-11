@@ -9,18 +9,30 @@
  */
 include_once('u_plantilla.php');
  
-function asignar($controlador) {
+function asignar($modulo, $accion) {
   global $vista;
+  /* El modulo por default, por si no esta definido depende del nivel */
+  if ($modulo == '') {
+    $nivel = getNivel();
+    if ($nivel == 'normal') {
+      $modulo = 'reservar';      
+    } elseif ($nivel == 'administrador') {
+      $modulo = 'administrar';
+    } else {
+      $modulo = 'login';
+    }
+  }
   /* La accion por default, por si no esta definida es llamada 'index' */
-  if (!isset($_GET['act'])) {
-    $_GET['act'] = 'index';
-  }
+  if ($accion == '') {
+    $accion = 'index';
+  }    
   /* Si se ha enviado información a través de un formulario, mostramos
-     la versión 'backend', que esta antepuesta por una 'b' */
+     la versión 'backend', que esta antepuesta por una 'b' */     
   if (isset($_POST['backend'])) {
-    include_once("b_{$controlador}_{$_GET['act']}.php");
+    include_once("b_{$modulo}_{$accion}.php");
   }
-  include_once("f_{$controlador}_{$_GET['act']}.php");    
+  include_once("f_{$modulo}_{$accion}.php");    
 }
+
 
 ?>

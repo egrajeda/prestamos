@@ -1,5 +1,5 @@
 <center>
-  <form id="form" method="post" action="index.php">
+  <form id="form" method="post" action="index.php?mod=login">
   <input type="hidden" name="backend" value="1" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>

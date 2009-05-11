@@ -58,3 +58,11 @@ h1 {
   font-weight: normal;
   border-bottom: 5px solid #f0f0f0;
 }
+
+.logout {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}

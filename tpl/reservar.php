@@ -72,4 +72,7 @@ else{
 echo "LAS RESERVACIONES SOLO SE PUEDEN REALIZAR LOS VIERNES O SABADOS";
 }
 ?>
-<a class="button" href="index.php?act=salir"><span>Salir del sistema</span></a>
+<a class="button logout" href="index.php?mod=login&act=logout">
+  <span>Cerrar sesión</span>
+</a>
+<div class="clear"></div>
