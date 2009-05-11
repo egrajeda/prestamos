@@ -27,6 +27,10 @@ body, td {
 #contenido {
   padding: 10px;
 }
+   
+.form {
+  width: 90%;
+}   
     
 .form .input {
   padding: 5px;

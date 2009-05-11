@@ -8,7 +8,7 @@
           <span>Regresar</span>
         </a>    
 <?php } ?>        
-        <div class="clear"></div>
+      <br /><br />
       </div>      
     </div>
   </body>

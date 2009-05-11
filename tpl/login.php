@@ -3,8 +3,8 @@
   <input type="hidden" name="backend" value="1" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
-      <td width="30%" align="right">Usuario:</td>
-      <td width="70%">
+      <td width="40%" align="right">Usuario:</td>
+      <td width="60%">
         <input class="input" type="text" name="usuario" value="" />
       </td>
     </tr>

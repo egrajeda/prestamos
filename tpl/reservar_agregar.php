@@ -4,8 +4,8 @@
   <input id="fecha" type="hidden" name="fecha" value="" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
-      <td width="50%" align="right">Descripción del uso:</td>
-      <td width="50%">
+      <td width="40%" align="right">Descripción del uso:</td>
+      <td width="60%">
         <input class="input" type="text" name="descripcion" value="" />
       </td>
     </tr>
