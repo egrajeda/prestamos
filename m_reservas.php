@@ -17,6 +17,19 @@ class Reservas {
             ':descripcion' => $descripcion, ':usuario'     => $usuario, 
             ':canon'       => $canon      , ':laptop'      => $laptop));
   }
+  
+  public function getReservas($usuario, $fecha_inicio, $fecha_final) {
+    $query = query("select `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
+      "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .
+      "`id_user` = :usuario and `fecha_reserva` between ':inicio' and ':final'  ",
+      array(':usuario' => $usuario    , ':inicio' => $fecha_inicio, 
+            ':final'   => $fecha_final));
+    $resultado = array();
+    while($row = mysql_fetch_array($query)) {
+      $resultado[] = $row;
+    }            
+    return $resultado;
+  }
 } 
 
 /* Dejamos lista la instancia */
