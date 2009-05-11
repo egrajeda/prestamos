@@ -7,8 +7,10 @@
  * Despues de esto, se encarga de incluir a un archivo para manejar los datos
  * de tipo $_POST, si es que hay, y si no incluye el archivo de presentacion.
  */
+include_once('u_plantilla.php');
  
 function asignar($controlador) {
+  global $vista;
   /* La accion por default, por si no esta definida es llamada 'index' */
   if (!isset($_GET['act'])) {
     $_GET['act'] = 'index';

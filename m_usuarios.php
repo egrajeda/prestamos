@@ -15,4 +15,7 @@ class Usuarios {
   } 
 } 
 
+/* Dejamos lista la instancia */
+$usuarios = new Usuarios();
+
 ?>

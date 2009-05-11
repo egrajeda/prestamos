@@ -10,17 +10,26 @@
     </tr>
     <tr>
       <td align="right">Contraseña:</td>
-      <td><input class="input" type="password" name="password" value="" /></td>
+      <td><input class="input" type="password" name="clave" value="" /></td>
     </tr>        
     <tr>
       <td></td>
       <td>
         <a class="button submit" href="#"><span>Iniciar sesión</span></a> 
+        <button type="submit" value="" style="display: none" />
       </td>
     </tr>
   </table>
   </form>
-  <div class="error">
+<?php
+/* Si hay un error, mostramos el mensaje, sino no */
+if ($vista->error) {
+  $estilo = 'style="visibility: visible"';
+} else {
+  $estilo = '';
+}
+?>   
+  <div class="error" <?php echo $estilo ?>>
     <span>La información introducida es incorrecta.</span>
   </div>        
 </center>
