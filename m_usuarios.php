@@ -7,8 +7,8 @@
 include_once('u_basededatos.php');
   
 class Usuarios { 
-  public function getClaveYNivel($usuario) {
-    $query = query("select `clave`, `nivel` from `usuarios` where `usuario` = ':usuario'",
+  public function getInformacion($usuario) {
+    $query = query("select `id_user`, `clave`, `nivel` from `usuarios` where `usuario` = ':usuario'",
       array(':usuario' => $usuario));  
     $clave = mysql_fetch_row($query);
     return $clave;
@@ -17,5 +17,4 @@ class Usuarios {
 
 /* Dejamos lista la instancia */
 $usuarios = new Usuarios();
-
 ?>

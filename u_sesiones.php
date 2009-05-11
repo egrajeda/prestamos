@@ -5,6 +5,10 @@ function getNivel() {
   return $_SESSION['nivel'];
 }
 
+function getId() {
+  return $_SESSION['id'];
+}
+
 function getModuloInicial() {
   if ($_SESSION['nivel'] == 'administrador') {
     return 'administrar';
