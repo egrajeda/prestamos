@@ -22,15 +22,9 @@
     </tr>
   </table>
   </form>
-<?php
-/* Si hay un error, mostramos el mensaje, sino no */
-if ($vista->error) {
-  $estilo = 'style="visibility: visible"';
-} else {
-  $estilo = '';
-}
-?>   
-  <div class="error" <?php echo $estilo ?>>
+<?php if ($vista->error) { ?>   
+  <div class="error">
     <span>La información introducida es incorrecta.</span>
   </div>        
+<?php } ?>  
 </center>

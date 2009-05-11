@@ -60,15 +60,9 @@
     </tr>
   </table>
   </form>
-<?php
-/* Si hay un error, mostramos el mensaje, sino no */
-if ($vista->error) {
-  $estilo = 'style="visibility: visible"';
-} else {
-  $estilo = '';
-}
-?>   
-  <div class="error" <?php echo $estilo ?>>
-    <span>La información introducida es incorrecta.</span>
+<?php if ($vista->error) { ?>
+  <div class="error">
+    <span><?php echo $vista->error ?></span>
   </div>        
+<?php } ?>
 </center>

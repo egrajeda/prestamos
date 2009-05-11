@@ -9,7 +9,10 @@ if ($dia != 5 && $dia != 1) {
 
 /* Las variables que vamos a mostrar en la vista */
 $vista->titulo = 'Reservaciones';
-$vista->encabezado = 'Agregar equipo';
+$vista->encabezado = 'Agregar solicitud de equipo';
+
+/* Si queremos mostrar el boton de regresar */
+$vista->regresar = true;
 
 presentar('reservar_agregar');
 ?>

@@ -50,7 +50,6 @@ body, td {
 }
 
 .error {
-  visibility: hidden;
   margin: 15px 0 0 0;
 }
 
@@ -94,7 +93,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.logout {
+.logout, .regresar {
   float: right;
 }
 
@@ -107,7 +106,9 @@ h2 {
   font-family: arial, sans-serif;
 }
 
-.ui-datepicker td a {
-  padding: 0 2px 0 0;
-  line-height: 16px;  
+.ui-datepicker td a,
+.ui-datepicker td span {
+  padding: 0;
+  line-height: 18px;  
+  text-align: center;
 }
