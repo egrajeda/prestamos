@@ -1,6 +1,4 @@
 <?php
-session_start();
-session_destroy();
 $dia=date("l");
 if($dia=="Saturday"||$dia=="Friday"||$dia='Sunday'){
     ?>
@@ -74,4 +72,4 @@ else{
 echo "LAS RESERVACIONES SOLO SE PUEDEN REALIZAR LOS VIERNES O SABADOS";
 }
 ?>
-<a href="salir.php">Salir del sistema</a>
+<a class="button" href="index.php?act=salir"><span>Salir del sistema</span></a>
