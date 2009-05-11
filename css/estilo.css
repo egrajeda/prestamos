@@ -40,6 +40,15 @@ body, td {
   background: #eff5ff;
 }
 
+.form .check1 {
+  margin: 0 0 5px 0;
+}
+
+.form .check1 input,
+.form .check2 input {
+  float: left;
+}
+
 .error {
   visibility: hidden;
   margin: 15px 0 0 0;

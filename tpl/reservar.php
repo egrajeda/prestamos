@@ -1,10 +1,11 @@
 <center>
-<?php if ($vista->dia == 'Saturday' || $vista->dia == 'Monday') { ?>
-  <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar reserva</span></a> 
+<?php if ($vista->dia == 5 || $vista->dia == 1) { ?>
+  <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar equipo</span></a> 
 <?php } else { ?>  
-  <del class="button"><span>Agregar reserva</span></del>
+  <del class="button"><span>Agregar equipo</span></del>
 <?php } ?>  
 </center>
+
 
 
 <br /><br /><br /><br />
@@ -82,7 +83,3 @@ else{
 echo "LAS RESERVACIONES SOLO SE PUEDEN REALIZAR LOS VIERNES O SABADOS";
 }
 ?>
-<a class="button logout" href="index.php?mod=login&act=logout">
-  <span>Cerrar sesión</span>
-</a>
-<div class="clear"></div>

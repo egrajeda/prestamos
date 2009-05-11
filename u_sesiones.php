@@ -17,8 +17,12 @@ function getModuloInicial() {
 
 function revisarNivel($requerido) {
   if ($_SESSION['nivel'] != $requerido) {
-    header('Location: index.php?mod=' . getModuloInicial());
+    bloquearEntrada();
   }
+}
+
+function bloquearEntrada() {
+  header('Location: index.php?mod=' . getModuloInicial());  
 }
 
 ?>
