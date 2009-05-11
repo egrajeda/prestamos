@@ -1,5 +1,5 @@
 <center>
-  <form id="form" method="post" action="index.php?mod=login">
+  <form method="post" action="index.php?mod=login">
   <input type="hidden" name="backend" value="1" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
@@ -15,8 +15,9 @@
     <tr>
       <td></td>
       <td>
-        <a class="button submit" href="#"><span>Iniciar sesión</span></a> 
-        <button type="submit" value="" style="display: none" />
+        <span class="button">
+          <button type="submit" value="Iniciar sesión">Iniciar sesión</button>
+        </span>
       </td>
     </tr>
   </table>

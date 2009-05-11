@@ -1,8 +1,15 @@
+<center>
+<?php if ($vista->dia == 'Saturday' || $vista->dia == 'Monday') { ?>
+  <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar reserva</span></a> 
+<?php } else { ?>  
+  <del class="button"><span>Agregar reserva</span></del>
+<?php } ?>  
+</center>
 
 
 <br /><br /><br /><br />
 <?php
-$dia=date("l");
+
 if($dia=="Saturday"||$dia=="Friday"||$dia='Sunday'){
     ?>
 <center><h2>SOLICITUD DE RECURSO AUDIOVISUAL</h2></center>
