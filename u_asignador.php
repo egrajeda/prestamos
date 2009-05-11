@@ -18,9 +18,9 @@ function asignar($controlador) {
   /* Si se ha enviado información a través de un formulario, mostramos
      la versión 'backend', que esta antepuesta por una 'b' */
   if (isset($_POST['backend'])) {
-    include_once("b_{$controlador}_{$_GET['act']}.php");
+    @include_once("b_{$controlador}_{$_GET['act']}.php");
   }
-  include_once("f_{$controlador}_{$_GET['act']}.php");    
+  @include_once("f_{$controlador}_{$_GET['act']}.php");    
 }
 
 ?>

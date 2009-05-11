@@ -20,4 +20,10 @@ if ($clave_bd != md5($clave)) {
   return;
 }
 
+/* Si llegamos hasta aqui es porque todo esta bueno, creamos la sesion */
+$_SESSION['nivel'] = 'administrador';
+
+/* Enviamos de regreso al index, porque ahora si ha iniciado sesion, y debe
+ * de ir a parar a otro lado */
+header('Location: index.php');
 ?>
