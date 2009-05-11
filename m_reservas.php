@@ -31,6 +31,14 @@ class Reservas {
     return $resultado;
   }
   
+  public function getReserva($usuario, $reserva) {
+    $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
+      "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .
+      "`id_user` = :usuario and `id_reserva` = :reserva  ",
+      array(':usuario' => $usuario, ':reserva' => $reserva));
+    return mysql_fetch_array($query);
+  }
+  
   public function delReserva($usuario, $reserva) {  
     $query = query("delete from `reservaciones` where `id_user` = :usuario and " .
       "`id_reserva` = :reserva", array(':usuario' => $usuario, ':reserva' => $reserva));

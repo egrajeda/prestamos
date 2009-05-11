@@ -14,5 +14,5 @@ $vista->encabezado = 'Agregar solicitud de equipo';
 /* Si queremos mostrar el boton de regresar */
 $vista->regresar = true;
 
-presentar('reservar_agregar');
+presentar('reservar_formulario');
 ?>
