@@ -1,6 +1,7 @@
 <center>
   <form method="post" action="index.php?mod=reservar&act=agregar">
   <input type="hidden" name="backend" value="1" />
+  <input id="fecha" type="hidden" name="fecha" value="" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
       <td width="50%" align="right">Descripción del uso:</td>

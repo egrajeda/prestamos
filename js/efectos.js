@@ -5,6 +5,11 @@ $(document).ready(function() {
   $('.input').blur(function() {
     $(this).removeClass('input-highlight');
   });
+  /* Insertamos el calendario, si es necesario */
+  insertarCalendario();  
+});
+
+function insertarCalendario() {
   /* Los nombres de los dias y meses en español */
   var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
                'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
@@ -14,9 +19,13 @@ $(document).ready(function() {
   var d = new Date();
   if (d.getDay() == 5) {
     $('#date').datepicker({ minDate: '+2d', maxDate: '+8d',
-      dayNamesMin: dias, monthNames: meses });
+      dayNamesMin: dias, monthNames: meses, onSelect: fechaSeleccionada });
   } else if (d.getDay() == 1) {
     $('#date').datepicker({ minDate: '+0d', maxDate: '+6d',
-      dayNamesMin: dias, monthNames: meses });
+      dayNamesMin: dias, monthNames: meses, onSelect: fechaSeleccionada });
   }  
-});
+}
+
+function fechaSeleccionada(d) {
+  $("#fecha").val(d);
+}
