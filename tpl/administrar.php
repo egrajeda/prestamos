@@ -36,6 +36,9 @@
       </td>
       <?php } ?>        
       <td align="center">
+        <input type="hidden" name="fecha[<?php echo $solicitud['id_reserva'] ?>]" value="<?php echo $solicitud['fecha_reserva'] ?>" />
+        <input type="hidden" name="hora_inicio[<?php echo $solicitud['id_reserva'] ?>]" value="<?php echo $solicitud['hora_prestamo'] ?>" />
+        <input type="hidden" name="hora_final[<?php echo $solicitud['id_reserva'] ?>]" value="<?php echo $solicitud['hora_devolucion'] ?>" />
         <?php echo date('h:i a', strtotime($solicitud['hora_prestamo'])) ?>
         &mdash;
         <?php echo date('h:i a', strtotime($solicitud['hora_devolucion'])) ?>        
@@ -112,6 +115,11 @@
     <button type="submit" value="Guardar modificaciones">Guardar modificaciones</button>
   </span>
   <?php } ?>
-  </form>      
+  </form>
+<?php if ($vista->error) { ?>
+  <div class="error">
+    <span><?php echo $vista->error ?></span>
+  </div>        
+<?php } ?>        
 </center>
 <br />

@@ -17,7 +17,7 @@ $vista->vacio = true;
 $vista->solicitudes = array();
 for ($dia = 0; $dia < 7; $dia++) {
   $vista->solicitudes[$dia] = $reservas->getReservasDelDiaYUsuario(
-    date('Y-m-d', strtotime(sprintf('%d days', $dia-6-$vista->dia))), getId());
+    date('Y-m-d', strtotime(sprintf('+%d days', 1+$dia-$vista->dia))), getId());
   if (count($vista->solicitudes[$dia]) > 0) {
     $vista->vacio = false;
   }

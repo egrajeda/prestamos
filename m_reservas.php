@@ -35,6 +35,16 @@ class Reservas {
       array(':canon'   => $canon, ':laptop' => $laptop,
             ':reserva' => $id));  
   }
+
+  public function setReservaCanon($id, $canon) {
+    $query = query("update `reservaciones` set `id_canon` = :canon where `id_reserva` = :reserva",
+      array(':canon' => $canon, ':reserva' => $id));  
+  }
+  
+  public function setReservaLaptop($id, $laptop) {
+    $query = query("update `reservaciones` set `id_laptop` = :laptop where `id_reserva` = :reserva",
+      array(':laptop' => $laptop, ':reserva' => $id));  
+  }  
   
   public function getReservas($usuario, $fecha_inicio, $fecha_final) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
@@ -70,7 +80,7 @@ class Reservas {
       $resultado[] = $row;
     }            
     return $resultado;
-  }  
+  }   
   
   public function getReserva($usuario, $reserva) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
@@ -79,6 +89,28 @@ class Reservas {
       array(':usuario' => $usuario, ':reserva' => $reserva));
     return mysql_fetch_array($query);
   }
+  
+  public function getReservaConCanon($reserva, $canon, $fecha, $hora_inicio, $hora_final) {
+    $query = query("select count(*) from `reservaciones` where `fecha_reserva` = ':fecha' " . 
+      "and not (`hora_devolucion` <= ':hora_inicio' or `hora_prestamo` >= ':hora_final')  " .
+      "and `id_canon` = :canon and `id_reserva` != :reserva",
+      array(':fecha'      => $fecha     , ':hora_inicio' => $hora_inicio,
+            ':hora_final' => $hora_final, ':canon'       => $canon,
+            ':reserva'    => $reserva));
+    $resultado = mysql_fetch_row($query);
+    return $resultado[0];
+  }
+
+  public function getReservaConLaptop($reserva, $laptop, $fecha, $hora_inicio, $hora_final) {
+    $query = query("select count(*) from `reservaciones` where `fecha_reserva` = ':fecha' " . 
+      "and not (`hora_devolucion` <= ':hora_inicio' or `hora_prestamo` >= ':hora_final')  " .
+      "and `id_laptop` = :laptop and `id_reserva` != :reserva",
+      array(':fecha'      => $fecha     , ':hora_inicio' => $hora_inicio,
+            ':hora_final' => $hora_final, ':laptop'      => $laptop,
+            ':reserva'    => $reserva));
+    $resultado = mysql_fetch_row($query);
+    return $resultado[0];
+  }    
   
   public function delReserva($usuario, $reserva) {  
     $query = query("delete from `reservaciones` where `id_user` = :usuario and " .
