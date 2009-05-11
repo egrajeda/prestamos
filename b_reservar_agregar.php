@@ -1,4 +1,6 @@
 <?php
+revisarNivel('normal');
+
 include_once('m_reservas.php');
 
 /* Extraemos la información que nos interesa */
@@ -46,7 +48,7 @@ $hora_inicio = date('H:i:00', mktime(0, $hora_inicio));
 $hora_final  = date('H:i:00', mktime(0, $hora_final));
 
 /* La insertamos en la base de datos */
-$reservas->nuevaReserva($fecha, $hora_inicio, $hora_final, $local, $descripcion, 
+$reservas->newReserva($fecha, $hora_inicio, $hora_final, $local, $descripcion, 
   getId(), $canon, $laptop);
 
 /* Como todo termino bien, redireccionamos a la pagina de inicio */

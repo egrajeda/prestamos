@@ -44,8 +44,8 @@
     </td>
     <td align="center"><?php echo $solicitud['aula'] ?></td>
     <td align="center">    
-      <a class="button" href="index.php?mod=reservar&act=agregar"><span>Modificar</span></a>
-      <a class="button" href="index.php?mod=reservar&act=agregar"><span>Eliminar</span></a>  
+      <a class="button" href="index.php?mod=reservar&act=modificar&id=<?php echo $solicitud['id_reserva'] ?>"><span>Modificar</span></a>
+      <a class="button" href="index.php?mod=reservar&act=eliminar&id=<?php echo $solicitud['id_reserva'] ?>"><span>Eliminar</span></a>  
     </td>
   </tr>  
 <?php } ?>  
