@@ -18,6 +18,17 @@ class Reservas {
             ':canon'       => $canon      , ':laptop'      => $laptop));
   }
   
+  public function setReserva($id, $fecha, $hora_inicio, $hora_final, $local, $descripcion, $usuario, $canon, $laptop) {
+    $query = query("update `reservaciones` set `fecha_reserva` = ':fecha', `hora_prestamo` = ':hora_inicio',   " .
+      "`hora_devolucion` = ':hora_final', `aula` = ':local', `descripcion` = ':descripcion', `canon` = :canon, " .
+      "`laptop` = :laptop where `id_reserva` = :reserva and `id_user` = :usuario",
+      array(':fecha'       => $fecha      , ':hora_inicio' => $hora_inicio, 
+            ':hora_final'  => $hora_final , ':local'       => $local, 
+            ':descripcion' => $descripcion, ':usuario'     => $usuario, 
+            ':canon'       => $canon      , ':laptop'      => $laptop,
+            ':reserva'     => $id));
+  }
+  
   public function getReservas($usuario, $fecha_inicio, $fecha_final) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
       "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .

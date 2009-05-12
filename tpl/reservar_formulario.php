@@ -1,6 +1,7 @@
 <center>
-  <form method="post" action="index.php?mod=reservar&act=agregar">
+  <form method="post" action="index.php?mod=reservar&act=<?php echo $vista->accion ?>">
   <input type="hidden" name="backend" value="1" />
+  <input type="hidden" name="id" value="<?php echo $vista->id ?>" />
   <input id="fecha" type="hidden" name="fecha" value="<?php echo $vista->fecha ?>" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>
@@ -74,7 +75,7 @@
       <td></td>
       <td>
         <span class="button">
-          <button type="submit" value="Iniciar sesión">Agregar equipo</button>
+          <button type="submit" value="Iniciar sesión"><?php echo $vista->boton ?></button>
         </span>
       </td>
     </tr>
