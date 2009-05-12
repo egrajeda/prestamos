@@ -62,7 +62,7 @@ class Reservas {
   
   public function getReservasDelDia($fecha) {
     $query = query("select * from `reservaciones` as A inner join `usuarios` as B " .
-      "on A.`id_user` = B.`id_user` where A.`fecha_reserva` = ':fecha'",
+      "on A.`id_user` = B.`id_user` where A.`fecha_reserva` = ':fecha' order by A.`hora_prestamo`",
       array(':fecha' => $fecha));
     $resultado = array();
     while($row = mysql_fetch_array($query)) {
