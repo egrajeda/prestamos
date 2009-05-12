@@ -79,10 +79,6 @@ INSERT INTO `equipos` (`tipo`, `numero`) VALUES
 ('canon', 5), ('canon', 6), ('canon', 7), ('canon', 8),
 ('canon', 9);
 
-;
-
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `reservaciones`
 --
