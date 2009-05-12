@@ -38,8 +38,8 @@
         &mdash;
         <?php echo date('h:i a', strtotime($solicitud['hora_devolucion'])) ?>        
       </td>        
-      <td></td>
-      <td></td>
+      <td align="center"><?php echo ucfirst($solicitud['departamento']) ?></td>
+      <td align="center"><?php echo $solicitud['usuario'] ?></td>
       <td align="center"><?php echo $solicitud['descripcion'] ?></td>
       <td align="center">
         <?php if($solicitud['canon']) { ?>
@@ -65,10 +65,12 @@
       <td colspan="5" align="right">Asignar cañon:</td>
       <td colspan="2">
         <select>
-          <option>- Sin asignar -</option>
-          <option>Cañon A</option>
-          <option>Cañon B</option>
-          <option>Cañon C</option>          
+          <option value="-1">- Sin asignar -</option>
+          <?php foreach ($vista->canones as $canones) { ?>
+          <option value="<?php echo $canones['id_equipo'] ?>">
+            <?php echo $canones['nombre'] ?>
+          </option>
+          <?php } ?>         
         </select>      
       </td>
     </tr>
@@ -80,10 +82,12 @@
       <td colspan="5" align="right">Asignar laptop:</td>
       <td colspan="2">
         <select>
-          <option>- Sin asignar -</option>
-          <option>Laptop 1</option>
-          <option>Laptop 2</option>
-          <option>Laptop 3</option>          
+          <option value="-1">- Sin asignar -</option>
+          <?php foreach ($vista->laptops as $laptops) { ?>
+          <option value="<?php echo $laptops['id_equipo'] ?>">
+            <?php echo $laptops['nombre'] ?>
+          </option>
+          <?php } ?>         
         </select>           
       </td>
     </tr>

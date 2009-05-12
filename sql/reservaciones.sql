@@ -75,10 +75,10 @@ CREATE TABLE IF NOT EXISTS `equipos` (
 --
 
 INSERT INTO `equipos` (`nombre`, `tipo`, `serial`) VALUES
-('Acer', 'Laptop','ENE07-4208'),
-('HP', 'Laptop','MAY05-8741'),
-('InFocus', 'Proyector','NOV08-3759'),
-('BenQ', 'Proyector','AGO06-6498');
+('Acer', 'laptop','ENE07-4208'),
+('HP', 'laptop','MAY05-8741'),
+('InFocus', 'canon','NOV08-3759'),
+('BenQ', 'canon','AGO06-6498');
 
 -- --------------------------------------------------------
 
