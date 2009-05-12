@@ -1,5 +1,14 @@
 <?php
-/* Aqui deben de seguir el formato de los otros archivos que empiezan con
- * m_, y debe de ir solamente la interaccion con la base de datos, especificamente
- * solo con la tabla `equipos` */
+include_once('u_basededatos.php');
+
+class Equipos {
+ public function newEquipos($marca, $clase, $identificacion) {
+	$query = query("insert into `equipos` (`nombre`, `tipo`, `serial`)".
+	"values (':marca', ':clase', ':identificacion')",
+	array(':marca'	=>	$marca	, ':clase' => $clase, ':identificacion' => $identificacion));
+}
+}
+
+$equipos = new Equipos();
+
 ?>
