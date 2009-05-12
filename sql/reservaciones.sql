@@ -46,6 +46,18 @@ INSERT INTO `usuarios` (`id_user`, `usuario`, `clave`, `nombre`, `apellido`, `de
 (8, 'milton.narvaez', '9350c0880a346ac5be67e3b729c1ba54', 'Milton', 'Narvaez', 'computacion', 1);
 
 --
+-- Los pares usuario/contraseña son:
+--
+-- pati/udb2009
+-- jaime.anaya/pc2009
+-- raul.martinez/pc2008
+-- walter.sanchez/pc2007
+-- melvin.carias/pc2006
+-- yenny.artiga/pc2005
+-- iris.abarca/pc2004
+-- milton.narvaez/pc2003
+
+--
 -- Estructura de tabla para la tabla `equipos`
 --
 
@@ -61,12 +73,13 @@ CREATE TABLE IF NOT EXISTS `equipos` (
 --
 
 INSERT INTO `equipos` (`tipo`, `numero`) VALUES
-('laptop', 1),
-('laptop', 2),
-('laptop', 3),
-('canon', 1),
-('canon', 2),
-('canon', 3);
+('laptop', 1), ('laptop', 2), ('laptop', 3),
+('laptop', 4), ('laptop', 5), ('laptop', 6),
+('canon', 1), ('canon', 2), ('canon', 3), ('canon', 4),
+('canon', 5), ('canon', 6), ('canon', 7), ('canon', 8),
+('canon', 9);
+
+;
 
 -- --------------------------------------------------------
 
