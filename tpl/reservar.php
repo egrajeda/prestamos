@@ -35,7 +35,8 @@
     <td align="center">
       <?php echo date('h:i a', strtotime($solicitud['hora_prestamo'])) ?>
       &mdash;
-      <?php echo date('h:i a', strtotime($solicitud['hora_devolucion'])) ?></td>
+      <?php echo date('h:i a', strtotime($solicitud['hora_devolucion'])) ?>
+    </td>
     <td align="center"><?php echo date('d/m/Y', strtotime($solicitud['fecha_reserva'])) ?></td>
     <td align="center">
       <?php if($solicitud['canon']) { ?>

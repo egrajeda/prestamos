@@ -147,3 +147,16 @@ h2 {
 .reporte .h td {
   background: #fbf9ee;
 }
+
+.reporte .dia {
+  border: 1px solid #ddd;
+  border-top: 0;  
+}
+
+.reporte .segundo td {
+  border-bottom: 1px solid #ddd;
+}
+
+.reporte .asignar {
+
+}

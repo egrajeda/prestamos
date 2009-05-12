@@ -40,6 +40,16 @@ class Reservas {
       $resultado[] = $row;
     }            
     return $resultado;
+  } 
+  
+  public function getReservasDelDia($fecha) {
+    $query = query("select * from `reservaciones` where `fecha_reserva` = ':fecha'",
+      array(':fecha' => $fecha));
+    $resultado = array();
+    while($row = mysql_fetch_array($query)) {
+      $resultado[] = $row;
+    }            
+    return $resultado;
   }
   
   public function getReserva($usuario, $reserva) {
