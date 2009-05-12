@@ -1,6 +1,8 @@
 <center>
   <a class="button" href="index.php?mod=equipo&act=agregar"><span>Agregar equipo</span></a> 
   <br /><br />
+  <form method="post" action="index.php?mod=administrar">
+  <input type="hidden" name="backend" value="1" />
   <table class="reporte" cellpadding="5" cellspacing="0" border="0">
     <tr class="cabecera">
       <td>Día</td>
@@ -64,10 +66,14 @@
 <?php }?>
       <td colspan="5" align="right">Asignar cañon:</td>
       <td colspan="2">
-        <select>
+        <select name="canon[<?php echo $solicitud['id_reserva'] ?>]">
           <option value="-1">- Sin asignar -</option>
           <?php foreach ($vista->canones as $canones) { ?>
+          <?php if ($canones['id_equipo'] == $solicitud['id_canon']) { ?>
+          <option value="<?php echo $canones['id_equipo'] ?>" selected="selected">          
+          <?php } else { ?>                    
           <option value="<?php echo $canones['id_equipo'] ?>">
+          <?php } ?>          
             <?php echo $canones['nombre'] ?>
           </option>
           <?php } ?>         
@@ -81,10 +87,14 @@
 <?php } $h = !$h; ?>
       <td colspan="5" align="right">Asignar laptop:</td>
       <td colspan="2">
-        <select>
+        <select name="laptop[<?php echo $solicitud['id_reserva'] ?>]">
           <option value="-1">- Sin asignar -</option>
           <?php foreach ($vista->laptops as $laptops) { ?>
+          <?php if ($laptops['id_equipo'] == $solicitud['id_laptop']) { ?>
+          <option value="<?php echo $laptops['id_equipo'] ?>" selected="selected">          
+          <?php } else { ?>                    
           <option value="<?php echo $laptops['id_equipo'] ?>">
+          <?php } ?>         
             <?php echo $laptops['nombre'] ?>
           </option>
           <?php } ?>         
@@ -94,8 +104,9 @@
     <?php } ?>
   <?php } ?>
   </table>
-  <a class="button" href="index.php?mod=administrar&act=modificar">
-    <span>Guardar modificaciones</span>
-  </a>          
+  <span class="button">
+    <button type="submit" value="Guardar modificaciones">Guardar modificaciones</button>
+  </span>
+  </form>      
 </center>
 <br />

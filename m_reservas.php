@@ -29,6 +29,13 @@ class Reservas {
             ':reserva'     => $id));
   }
   
+  public function setReservaEquipo($id, $canon, $laptop) {
+    $query = query("update `reservaciones` set `id_canon` = :canon, `id_laptop` = :laptop " .
+      "where `id_reserva` = :reserva",
+      array(':canon'   => $canon, ':laptop' => $laptop,
+            ':reserva' => $id));  
+  }
+  
   public function getReservas($usuario, $fecha_inicio, $fecha_final) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
       "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .
