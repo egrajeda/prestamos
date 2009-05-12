@@ -1,7 +1,6 @@
 <center>
   <form method="post" action="index.php?mod=usuario&act=agregar">
   <input type="hidden" name="backend" value="1" />
-
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     	<tr>
       <td width="40%" align="right">Usuario:</td>
@@ -10,12 +9,12 @@
       </td>
     </tr>
     <tr>
-      <td width="40%" align="right">Password:</td>
+      <td width="40%" align="right">Contraseña:</td>
       <td width="60%"><input class="input" type="password" name="clave" value="" />
       </td>
     </tr>    
 	 <tr>
-      <td width="40%" align="right">Confirmar Password:</td>
+      <td width="40%" align="right">Confirmar contraseña:</td>
       <td width="60%"><input class="input" type="password" name="clave1" value="" />
       </td>
     </tr> 

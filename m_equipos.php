@@ -2,13 +2,21 @@
 include_once('u_basededatos.php');
 
 class Equipos {
-  public function newEquipos($marca, $clase, $identificacion) {
-	  $query = query("insert into `equipos` (`nombre`, `tipo`, `serial`) " .
-    	"values (':marca', ':clase', ':identificacion')",
-    	array(':marca'	        => $marca	        , ':clase' => $clase, 
-    	      ':identificacion' => $identificacion));
-  }   
+  public function newEquipos($clase, $identificacion) {
+	  $query = query("insert into `equipos` (`tipo`, `numero`) " .
+    	"values (':clase', :identificacion)",
+    	array(':clase' => $clase, ':identificacion' => $identificacion));
+  }
   
+  public function verificarEquipo($clase, $identificacion) {
+    $query = query("select * from `equipos` where `tipo` = ':clase' and " .
+      "`numero` = :identificacion", array(':clase' => $clase, ':identificacion' => $identificacion));
+    if (mysql_num_rows($query)) {
+      return 1;
+    }
+    return 0;  
+  }
+    
   public function getEquipos() {
     $query = query("select * from `equipos` order by `tipo`, `numero`");
     $resultado = array();
@@ -24,7 +32,7 @@ class Equipos {
   }
   
   public function getEquiposPorTipo($tipo) {
-    $query = query("select * from `equipos` where `tipo` = ':tipo'",
+    $query = query("select * from `equipos` where `tipo` = ':tipo' order by `tipo`, `numero`",
       array(':tipo' => $tipo));
     $resultado = array();
     while ($row = mysql_fetch_array($query)) {
