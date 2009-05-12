@@ -44,27 +44,29 @@ INSERT INTO `usuarios` (`id_user`, `usuario`, `clave`, `nombre`, `apellido`, `de
 (6, 'yenny.artiga', 'd5ed9aa3fcd3ef0fde808f37b9e17bcf', 'Yenny', 'Artiga', 'computacion', 1),
 (7, 'iris.abarca', 'fc0a9ef8fa66219c5f5d81cb614ebfb2', 'Iris', 'Abarca', 'computacion', 1),
 (8, 'milton.narvaez', '9350c0880a346ac5be67e3b729c1ba54', 'Milton', 'Narvaez', 'computacion', 1);
+
 --
 -- Estructura de tabla para la tabla `equipos`
 --
 
 CREATE TABLE IF NOT EXISTS `equipos` (
   `id_equipo` int(11) NOT NULL AUTO_INCREMENT,	
-  `nombre` varchar(20) NOT NULL,
   `tipo` varchar(20) NOT NULL,
-  `serial` varchar(10) NOT NULL,
+  `numero` int(11) NOT NULL,
   PRIMARY KEY (`id_equipo`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `usuarios`
+-- Volcar la base de datos para la tabla `equipos`
 --
 
-INSERT INTO `equipos` (`nombre`, `tipo`, `serial`) VALUES
-('Acer', 'laptop','ENE07-4208'),
-('HP', 'laptop','MAY05-8741'),
-('InFocus', 'canon','NOV08-3759'),
-('BenQ', 'canon','AGO06-6498');
+INSERT INTO `equipos` (`tipo`, `numero`) VALUES
+('laptop', 1),
+('laptop', 2),
+('laptop', 3),
+('canon', 1),
+('canon', 2),
+('canon', 3);
 
 -- --------------------------------------------------------
 

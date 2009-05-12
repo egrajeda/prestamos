@@ -16,7 +16,7 @@
  *
  * Sustituiría todas las ocurrencias de ':user' con 'walter.sanchez'.
  */
-function query($str, $datos) {
+function query($str, $datos = array()) {
   $bd = BaseDeDatos::getInstancia();    
   foreach ($datos as $viejo => $nuevo) {
     $str = str_replace($viejo, $nuevo, $str);
