@@ -1,12 +1,12 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
 
 include_once('m_reservas.php');
 
 /* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
-$vista->encabezado = 'Informe de solicitud pasada';
-$vista->regresar = true;
+$vista->titulo     = 'Gestión de equipo audiovisual';
+$vista->encabezado = 'Informe de solicitudes pasadas';
+$vista->regresar = 'mod=reservar';
 
 /* Solamente vamos a ver las solicitudes de la semana pasada */
 $vista->dia = date('N');

@@ -1,7 +1,13 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
 
 include_once('m_reservas.php');
+
+/* Se revisa que en verdad sea viernes o sábado */
+$dia = date('N');
+if ($dia != 5 && $dia != 6) {
+  bloquearEntrada();
+}
 
 /* Si ya tenemos el id por alguna razon, es porque ya mandamos informacion
  * via POST, nos quedamos con esa informacion y no sacamos nada de la base de
@@ -31,11 +37,11 @@ if (!isset($vista->id)) {
 }
 
 /* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
+$vista->titulo     = 'Gestión de equipo audiovisual';
 $vista->encabezado = 'Modificar solicitud de equipo';
 
 /* Si queremos mostrar el boton de regresar y otras cosas*/
-$vista->regresar = true;
+$vista->regresar = 'mod=reservar';
 $vista->boton  = 'Modificar solicitud';
 $vista->accion = 'modificar';
 

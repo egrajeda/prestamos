@@ -1,6 +1,4 @@
 <center>
-  <a class="button" href="index.php?mod=equipo&act=agregar"><span>Agregar equipo</span></a> 
-  <br /><br />
   <form method="post" action="index.php?mod=administrar">
   <input type="hidden" name="backend" value="1" />
   <table class="reporte" cellpadding="5" cellspacing="0" border="0">
@@ -128,7 +126,7 @@
   </span>
   <?php } ?>
   </form>
-<?php if ($vista->error) { ?>
+<?php if (@$vista->error) { ?>
   <div class="error">
     <span><?php echo $vista->error ?></span>
   </div>        

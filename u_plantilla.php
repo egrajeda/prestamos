@@ -19,7 +19,8 @@ function presentar($tpl) {
   global $vista;
   /* Aqui definimos unas variables que deben de estar disponibles en todas las
    * vistas */
-  $vista->usuario = $_SESSION['usuario'];
+  $vista->usuario = @$_SESSION['usuario'];
+  $vista->nivel   = @$_SESSION['nivel'];
   /* Incluimos las vistas */  
   include_once('tpl/encabezado.php');
   include_once("tpl/$tpl.php");

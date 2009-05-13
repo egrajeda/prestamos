@@ -1,18 +1,18 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
 
-/* Como una seguridad extra, se revisa que en verdad sea viernes o sábado */
+/* Se revisa que en verdad sea viernes o sábado */
 $dia = date('N');
 if ($dia != 5 && $dia != 6) {
   bloquearEntrada();
 }
 
 /* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
+$vista->titulo     = 'Gestión de equipo audiovisual';
 $vista->encabezado = 'Agregar solicitud de equipo';
 
 /* Si queremos mostrar el boton de regresar y otras cosas */
-$vista->regresar = true;
+$vista->regresar = 'mod=reservar';
 $vista->boton  = 'Agregar solicitud';
 $vista->accion = 'agregar';
 

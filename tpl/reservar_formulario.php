@@ -7,7 +7,7 @@
     <tr>
       <td width="40%" align="right">Descripción del uso:</td>
       <td width="60%">
-        <input class="input" type="text" name="descripcion" value="<?php echo $vista->descripcion ?>" />
+        <input class="input" type="text" name="descripcion" value="<?php echo @$vista->descripcion ?>" />
       </td>
     </tr>
     <tr>
@@ -52,14 +52,14 @@
       <td align="right">Equipo deseado:</td>
       <td>
         <div class="check1">
-<?php if ($vista->canon) { ?>
+<?php if (@$vista->canon) { ?>
           <input type="checkbox" name="canon" checked="checked" />
 <?php } else { ?>        
           <input type="checkbox" name="canon" />          
 <?php } ?>          
         Cañon</div>
         <div class="check2">
-<?php if ($vista->laptop) { ?>        
+<?php if (@$vista->laptop) { ?>        
           <input type="checkbox" name="laptop" checked="checked" />        
 <?php } else { ?>          
           <input type="checkbox" name="laptop" />
@@ -69,19 +69,19 @@
     </tr>                
     <tr>
       <td align="right">Local:</td>
-      <td><input class="input" type="text" name="local" value="<?php echo $vista->local ?>" /></td>
+      <td><input class="input" type="text" name="local" value="<?php echo @$vista->local ?>" /></td>
     </tr>                    
     <tr>
       <td></td>
       <td>
         <span class="button">
-          <button type="submit" value="Iniciar sesión"><?php echo $vista->boton ?></button>
+          <button type="submit" value="<?php echo $vista->boton ?>"><?php echo $vista->boton ?></button>
         </span>
       </td>
     </tr>
   </table>
   </form>
-<?php if ($vista->error) { ?>
+<?php if (@$vista->error) { ?>
   <div class="error">
     <span><?php echo $vista->error ?></span>
   </div>        

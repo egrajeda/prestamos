@@ -22,3 +22,17 @@
         </div>      
 <?php } ?>        
         <h1><?php echo $vista->encabezado ?></h1>
+<?php if ($vista->nivel >= 2) { ?>               
+        <div id="menu">
+<?php if ($vista->nivel == 3) { ?>
+          <span class="solicitudes"><a href="index.php?mod=reservar">Solicitudes</a></span>
+<?php } ?>
+<?php if ($vista->nivel >= 2) { ?>
+          <span class="administracion"><a href="index.php?mod=administrar">Administración</a></span>
+          <span class="equipos"><a href="index.php?mod=equipos">Equipos</a></span>
+          <span class="usuarios"><a href="index.php?mod=usuarios">Usuarios</a></span>
+<?php } ?>          
+        </div>
+<?php } else { ?>        
+        <br />
+<?php } ?>

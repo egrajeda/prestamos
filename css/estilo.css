@@ -92,11 +92,49 @@ body, td {
 
 
 h1 {
-  margin: 0 0 20px 0;
+  margin: 0;
   padding: 15px 10px 10px 0;
   font-size: 24px;
   font-weight: normal;
   border-bottom: 5px solid #f0f0f0;
+}
+
+#menu {
+  padding: 3px 10px 8px 10px;
+  margin: 0 0 20px 0;
+  background: #f0f0f0;    
+}
+
+#menu a {
+  margin: 0 20px 0 0;
+  padding: 2px 4px;
+  color: #444;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  color: #fff;
+  background: #888;
+}
+
+#menu span {
+  padding: 0 0 0 18px;
+}
+
+#menu .solicitudes {
+  background: url('../img/page.png') no-repeat;
+}
+
+#menu .administracion {
+  background: url('../img/book.png') no-repeat;
+}
+
+#menu .equipos {
+  background: url('../img/computer.png') no-repeat;
+}
+
+#menu .usuarios {
+  background: url('../img/group.png') no-repeat;
 }
 
 #info {

@@ -1,9 +1,13 @@
 <?php
-revisarNivel('administrador');
+revisarNivel(2);
 
 include_once('m_reservas.php');
 include_once('m_equipos.php');
 include_once('b_administrar_validacion.php');
+
+if (!@$canones) {
+  $canones = array();
+}
 
 /* Primero hacemos una ronda con todos aquellos 'desasignaciones' que hicimos */
 foreach ($canones as $reserva => $canon) {

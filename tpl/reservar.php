@@ -1,8 +1,8 @@
 <center>
 <?php if (!isset($vista->otrodia)) { ?>
-  <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar equipo</span></a> 
+  <a class="button" href="index.php?mod=reservar&act=agregar"><span>Agregar solicitud</span></a> 
 <?php } else { ?>  
-  <del class="button"><span>Agregar equipo</span></del>
+  <del class="button"><span>Agregar solicitud</span></del>
 <?php } ?>  
 <a class="button" href="index.php?mod=reservar&act=informe"><span>Informe pasado</span></a>
 <br /><br />

@@ -1,5 +1,5 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
 
 include_once('m_reservas.php');
 include_once('b_reservar_validacion.php');
@@ -15,5 +15,5 @@ $reservas->setReserva($vista->id, $fecha, $hora_inicio, $hora_final, $local,
   $descripcion, getId(), $canon, $laptop);
 
 /* Y nos regresamos al principio */
-header('Location: index.php');
+header('Location: index.php?mod=reservar');
 ?>

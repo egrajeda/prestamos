@@ -1,11 +1,11 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
 
 include_once('m_reservas.php');
 
 /* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
-$vista->encabezado = 'Solicitud de recurso audiovisual';
+$vista->titulo     = 'Gestión de equipo audiovisual';
+$vista->encabezado = 'Solicitudes de recursos audiovisuales';
 
 /* Debemos de saber el dia, para asi bloquear las reservas o no */
 $vista->dia = date('N');
@@ -22,7 +22,7 @@ if ($vista->dia == 5) {
 }
 
 /* Cargamos las solicitudes de esta semana para mostrarlas */
-if ($vista->otrodia) {
+if (@$vista->otrodia) {
   $vista->solicitudes = array();
 } else {
   $vista->solicitudes = $reservas->getReservas(getId(), $fecha_inicio, $fecha_final);

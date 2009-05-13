@@ -1,12 +1,12 @@
 <?php
-revisarNivel('administrador');
+revisarNivel(2);
 
 include_once('m_reservas.php');
 include_once('m_equipos.php');
 
 /* Las variables que vamos a mostrar en la vista */
-$vista->titulo = 'Reservaciones';
-$vista->encabezado = 'Administración';
+$vista->titulo     = 'Gestión de equipo audiovisual';
+$vista->encabezado = 'Administración de solicitudes';
 
 /* Solamente vamos a ver las solicitudes de esta semana */
 $vista->dia = date('N');

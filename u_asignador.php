@@ -11,17 +11,6 @@ include_once('u_plantilla.php');
  
 function asignar($modulo, $accion) {
   global $vista;
-  /* El modulo por default, por si no esta definido depende del nivel */
-  if ($modulo == '') {
-    $nivel = getNivel();
-    if ($nivel == 'normal') {
-      $modulo = 'reservar';      
-    } elseif ($nivel == 'administrador') {
-      $modulo = 'administrar';
-    } else {
-      $modulo = 'login';
-    }
-  }
   /* La accion por default, por si no esta definida es llamada 'index' */
   if ($accion == '') {
     $accion = 'index';

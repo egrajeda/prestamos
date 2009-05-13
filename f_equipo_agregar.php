@@ -1,5 +1,5 @@
 <?php
-revisarNivel('administrador');
+revisarNivel(2);
 
 /* Como una seguridad extra, se revisa que en verdad sea viernes o sábado */
 /*$dia = date('N');

@@ -1,5 +1,5 @@
 <?php
-revisarNivel('administrador');
+revisarNivel(2);
 
 include_once('m_equipos.php');
 

@@ -1,5 +1,11 @@
 <?php
-revisarNivel('normal');
+revisarNivel(1);
+
+/* Se revisa que en verdad sea viernes o sábado */
+$dia = date('N');
+if ($dia != 5 && $dia != 6) {
+  bloquearEntrada();
+}
 
 /* Extraemos la información que nos interesa */
 $descripcion = trim($_POST['descripcion']);

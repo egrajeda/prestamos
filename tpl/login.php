@@ -22,7 +22,7 @@
     </tr>
   </table>
   </form>
-<?php if ($vista->error) { ?>   
+<?php if (@$vista->error) { ?>   
   <div class="error">
     <span>La información introducida es incorrecta.</span>
   </div>        

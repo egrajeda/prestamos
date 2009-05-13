@@ -3,8 +3,8 @@
           <span>Cerrar sesión</span>
         </a>        
 <?php } ?>  
-<?php if ($vista->regresar) { ?>
-        <a class="button regresar" href="index.php">
+<?php if (@$vista->regresar) { ?>
+        <a class="button regresar" href="index.php?<?php echo $vista->regresar ?>">
           <span>Regresar</span>
         </a>    
 <?php } ?>        
