@@ -32,27 +32,27 @@
       </td>
     </tr>   
     <tr>
-	      <td width="40%" align="right">Departamento:</td>
+	      <td width="40%" align="right">Escuela:</td>
       <td width="60%">
         <input class="input" type="text" name="departamento" value="<?php echo @$vista->departamento?>" />
       </td>
     </tr>                
-    <tr>
-      <td align="right">Nivel:</td>
-      
-	  <td>
-         <select name="nivel">
-<?php $m= array("normal","administrador","ambos") ?>
-<?php for ($i = 0; $i<= 2; $i += 1) { ?>
-<?php if ($m [$i]== $vista->nivel) { ?>
-          <option value="<?php echo $i+1?>" selected="selected">
-<?php } else { ?>
-          <option value="<?php echo $i+1?>">
-<?php } ?>
-            <?php echo $m[$i]?>
-          </option>
-        <?php } ?> 
-        </select>		
+    <tr valign="top">
+      <td align="right">Roles:</td>  	  <td>
+        <div class="check1">
+<?php if (@$vista->nivel_normal) { ?>
+          <input type="checkbox" name="nivel_normal" checked="checked" />
+<?php } else { ?>        
+          <input type="checkbox" name="nivel_normal" />          
+<?php } ?>          
+        Normal</div>
+        <div class="check2">
+<?php if (@$vista->nivel_admin) { ?>        
+          <input type="checkbox" name="nivel_admin" checked="checked" />        
+<?php } else { ?>          
+          <input type="checkbox" name="nivel_admin" />
+<?php } ?>          
+        Administrador</div>  	  
       </td>
     </tr>     
 	<tr>

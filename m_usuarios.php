@@ -16,7 +16,7 @@ class Usuarios {
   }
   
   public function verificarUsuario($usuario) {
-    $query = query("select count(*) from `usuarios` where `usuario`=':usuario'",
+    $query = query("select * from `usuarios` where `usuario`=':usuario'",
       array(':usuario' => $usuario));
     if (mysql_num_rows($query)) {
       return 1;
