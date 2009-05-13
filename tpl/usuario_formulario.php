@@ -6,7 +6,7 @@
     	<tr>
       <td width="40%" align="right">Usuario:</td>
       <td width="60%">
-        <input class="input" type="text" name="user" value="<?php echo $vista->user?>" />
+        <input class="input" type="text" name="user" value="<?php echo @$vista->user?>" />
       </td>
     </tr>
     <tr>
@@ -22,19 +22,19 @@
 	<tr>
       <td width="40%" align="right">Nombre:</td>
       <td width="60%">
-        <input class="input" type="text" name="nombre" value="<?php echo $vista->nombre?>" />
+        <input class="input" type="text" name="nombre" value="<?php echo @$vista->nombre?>" />
       </td>
     </tr>
 	<tr>
       <td width="40%" align="right">Apellido:</td>
       <td width="60%">
-        <input class="input" type="text" name="apellido" value="<?php echo $vista->apellido?>" />
+        <input class="input" type="text" name="apellido" value="<?php echo @$vista->apellido?>" />
       </td>
     </tr>   
     <tr>
 	      <td width="40%" align="right">Departamento:</td>
       <td width="60%">
-        <input class="input" type="text" name="departamento" value="<?php echo $vista->departamento?>" />
+        <input class="input" type="text" name="departamento" value="<?php echo @$vista->departamento?>" />
       </td>
     </tr>                
     <tr>
@@ -65,7 +65,7 @@
     </tr>       
   </table>
     </form>
-<?php if ($vista->error) { ?>
+<?php if (@$vista->error) { ?>
   <div class="error">
     <span><?php echo $vista->error ?></span>
   </div>        
