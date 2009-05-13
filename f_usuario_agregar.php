@@ -6,7 +6,7 @@ $vista->titulo     = 'Gestión de equipo audiovisual';
 $vista->encabezado = 'Agregar usuario';
 
 /* Si queremos mostrar el boton de regresar */
-$vista->regresar = 'mod=usuario';
+$vista->regresar = 'mod=administrar';
 
 presentar('usuario_formulario');
 ?>

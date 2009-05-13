@@ -53,5 +53,5 @@ $nivel = $nivel_normal*1 + $nivel_admin*2;
 $usuarios->newUsuario($user, $clave, $nombre, $apellido, $departamento, $nivel);
 
 /* Como todo termino bien, redireccionamos a la pagina de inicio */
-header('Location: index.php?mod=usuario');
+header('Location: index.php?mod=administrar');
 ?>

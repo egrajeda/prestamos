@@ -30,7 +30,7 @@
 <?php if ($vista->nivel >= 2) { ?>
           <span class="administracion"><a href="index.php?mod=administrar">Administración</a></span>
           <span class="equipos"><a href="index.php?mod=equipos">Equipos</a></span>
-          <span class="usuarios"><a href="index.php?mod=usuario">Usuarios</a></span>
+          <span class="usuarios"><a href="index.php?mod=usuario&act=agregar">Agregar usuario</a></span>
 <?php } ?>          
         </div>
 <?php } else { ?>        
