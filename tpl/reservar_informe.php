@@ -1,4 +1,8 @@
 <center>
+  <div class="semana"> 
+    Semana del <?php echo $vista->dia_inicial ?> al
+    <?php echo $vista->dia_final ?> de <?php echo $vista->mes_final ?>
+  </div>
   <table class="reporte" cellpadding="5" cellspacing="0" border="0">
     <tr class="cabecera">
       <td width="12%">Día</td>

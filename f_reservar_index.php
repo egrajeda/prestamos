@@ -28,5 +28,12 @@ if (@$vista->otrodia) {
   $vista->solicitudes = $reservas->getReservas(getId(), $fecha_inicio, $fecha_final);
 }
 
+/* La semana siguiente */
+$meses = array('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre');
+$vista->dia_inicial = date('d', strtotime(sprintf('+%d days',  8-$vista->dia)));
+$vista->dia_final   = date('d', strtotime(sprintf('+%d days', 14-$vista->dia)));
+$vista->mes_final   = $meses[date('n', strtotime(sprintf('+%d days', 14-$vista->dia)))-1];
+
 presentar('reservar');
 ?>

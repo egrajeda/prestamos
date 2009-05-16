@@ -188,6 +188,11 @@ h2 {
   border: 1px solid #d5a13d;
 }
 
+.semana {
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
 .reporte {
   width: 95%;
 }

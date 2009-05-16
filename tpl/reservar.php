@@ -6,6 +6,12 @@
 <?php } ?>  
 <a class="button" href="index.php?mod=reservar&act=informe"><span>Informe pasado</span></a>
 <br /><br />
+<?php if (!isset($vista->otrodia)) { ?>
+<div class="semana">
+  Semana del <?php echo $vista->dia_inicial ?> al
+  <?php echo $vista->dia_final ?> de <?php echo $vista->mes_final ?>
+</div>
+<?php } ?>
 <table class="reporte" cellpadding="5" cellspacing="0" border="0">
   <tr class="cabecera">
     <td width="25%">Descripción del uso</td>

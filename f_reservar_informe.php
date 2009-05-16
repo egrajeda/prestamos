@@ -25,5 +25,12 @@ for ($dia = 0; $dia < 7; $dia++) {
 $vista->dias = array('Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 
   'Sábado', 'Domingo');
   
+/* La semana en que estamos */
+$meses = array('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre');
+$vista->dia_inicial = date('d', strtotime(sprintf('+%d days', 1-$vista->dia)));
+$vista->dia_final   = date('d', strtotime(sprintf('+%d days', 7-$vista->dia)));
+$vista->mes_final   = $meses[date('n', strtotime(sprintf('+%d days', 7-$vista->dia)))-1];  
+  
 presentar('reservar_informe');
 ?>
