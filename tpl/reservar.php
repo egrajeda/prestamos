@@ -8,7 +8,7 @@
 <br /><br />
 <table class="reporte" cellpadding="5" cellspacing="0" border="0">
   <tr class="cabecera">
-    <td width="25%" style="text-align: left">Descripción del uso</td>
+    <td width="25%">Descripción del uso</td>
     <td width="20%">Rango de hora</td>
     <td width="10%">Fecha</td>
     <td width="5%">Cañon</td>
@@ -28,7 +28,7 @@
   <tr>
     <td colspan="7" align="center">
       <div class="advertencia">
-        <span>No ha creado ninguna solicitud para esta semana.</span>
+        <span>No ha creado ninguna solicitud para la semana entrante.</span>
       </div>          
     </td>
   </tr>
@@ -39,7 +39,7 @@
 <?php } else { ?>
   <tr>
 <?php } $h = !$h; ?>
-    <td><?php echo $solicitud['descripcion'] ?></td>
+    <td align="center"><?php echo $solicitud['descripcion'] ?></td>
     <td align="center">
       <?php echo date('h:i a', strtotime($solicitud['hora_prestamo'])) ?>
       &mdash;

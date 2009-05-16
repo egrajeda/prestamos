@@ -39,7 +39,8 @@ class Reservas {
   public function getReservas($usuario, $fecha_inicio, $fecha_final) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
       "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .
-      "`id_user` = :usuario and `fecha_reserva` between ':inicio' and ':final'  ",
+      "`id_user` = :usuario and `fecha_reserva` between ':inicio' and ':final' order by " .
+      "`fecha_reserva`, `hora_prestamo`",
       array(':usuario' => $usuario    , ':inicio' => $fecha_inicio, 
             ':final'   => $fecha_final));
     $resultado = array();

@@ -11,11 +11,13 @@ $(document).ready(function() {
 
 function insertarCalendario() {
   var options = {
-     dateFormat: 'yy-mm-dd',
-    dayNamesMin: ['L', 'M', 'Mi', 'J', 'V', 'S', 'D'],
-     monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
-                  'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-       onSelect: fechaSeleccionada 
+          dateFormat: 'yy-mm-dd',
+            firstDay: 1,
+         dayNamesMin: ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'],
+          monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+                       'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            onSelect: fechaSeleccionada,
+    hideIfNoPrevNext: true
   };
   /* Si hay una fecha por default, la seleccionamos */
   var s = new Date();
@@ -32,13 +34,13 @@ function insertarCalendario() {
    * las fechas en que puede reservar el equipo */    
   var d = new Date();
   if (d.getDay() == 5) {
+    options.minDate = '+3d';
+    options.maxDate = '+9d';  
+  } else if (d.getDay() == 6) {
     options.minDate = '+2d';
     options.maxDate = '+8d';  
-  } else if (d.getDay() == 1) {
-    options.minDate = '+0d';
-    options.maxDate = '+6d';  
   }  
-  $('#date').datepicker(options);  
+  $('#date').datepicker(options);
 }
 
 function fechaSeleccionada(d) {

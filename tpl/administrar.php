@@ -14,19 +14,11 @@
       <td>Laptop</td>
       <td>Local</td>
     </tr>
-  <?php if (isset($vista->otrodia)) { ?>    
+  <?php if ($vista->vacio) { ?>
     <tr>
       <td colspan="8" align="center">
         <div class="advertencia">
-          <span>Solamente se pueden administrar las solicitudes el dia <b>lunes</b>.</span>
-        </div>          
-      </td>
-    </tr>    
-  <?php } elseif ($vista->vacio) { ?>
-    <tr>
-      <td colspan="8" align="center">
-        <div class="advertencia">
-          <span>No ha creado ninguna solicitud para esta semana.</span>
+          <span>No existe ninguna solicitud para esta semana.</span>
         </div>          
       </td>
     </tr>

@@ -3,7 +3,7 @@ revisarNivel('normal');
 
 /* Como una seguridad extra, se revisa que en verdad sea viernes o sábado */
 $dia = date('N');
-if ($dia != 5 && $dia != 1) {
+if ($dia != 5 && $dia != 6) {
   bloquearEntrada();
 }
 
@@ -15,6 +15,13 @@ $vista->encabezado = 'Agregar solicitud de equipo';
 $vista->regresar = true;
 $vista->boton  = 'Agregar solicitud';
 $vista->accion = 'agregar';
+
+/* Ponemos la fecha por default que va a aparecer señalada */
+if ($dia == 5) {
+  $vista->fecha = date('Y-m-d', strtotime('+3 days'));
+} else {
+  $vista->fecha = date('Y-m-d', strtotime('+2 days'));
+}
 
 presentar('reservar_formulario');
 ?>
