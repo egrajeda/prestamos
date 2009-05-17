@@ -5,14 +5,14 @@
   <input type="hidden" name="backend" value="1" />
   <table class="reporte" cellpadding="5" cellspacing="0" border="0">
     <tr class="cabecera">
-      <td>Día</td>
-      <td>Hora</td>
-      <td>Escuela</td>
-      <td>Docente</td>
-      <td>Descripción del uso</td>
-      <td>Cañon</td>
-      <td>Laptop</td>
-      <td>Local</td>
+      <td width="12%">Día</td>
+      <td width="20%">Hora</td>
+      <td width="11%">Escuela</td>
+      <td width="11%">Docente</td>
+      <td width="22%">Descripción del uso</td>
+      <td width="7%">Cañon</td>
+      <td width="7%">Laptop</td>
+      <td width="10%">Local</td>      
     </tr>
   <?php if ($vista->vacio) { ?>
     <tr>
@@ -23,15 +23,15 @@
       </td>
     </tr>
   <?php } ?>  
-  <?php for ($dia = 0; $dia < 7; $dia++) { $a = false; ?>
-    <?php $h = false; foreach ($vista->solicitudes[$dia] as $solicitud) { ?>
+  <?php $h = false; for ($dia = 0; $dia < 7; $dia++) { $a = false; ?>
+    <?php foreach ($vista->solicitudes[$dia] as $solicitud) { ?>
 <?php if ($h) { ?>
     <tr class="h">  
 <?php } else { ?>
     <tr>
 <?php } ?>
       <?php if (!$a) { $a = true; ?>
-      <td class="dia" align="center" rowspan="<?php echo count($vista->solicitudes[$dia])*3 ?>">
+      <td class="dia" align="center" rowspan="<?php echo count($vista->solicitudes[$dia])*3 ?>" style="background: #fff">
         <?php echo $vista->dias[$dia] ?>
       </td>
       <?php } ?>        
