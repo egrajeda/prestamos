@@ -61,6 +61,17 @@ class Reservas {
     return $resultado;
   }
   
+  public function getReservasDelDiaYUsuario($fecha, $usuario) {
+    $query = query("select * from `reservaciones` where " .
+      "`fecha_reserva` = ':fecha' and `id_user` = :usuario",
+      array(':fecha' => $fecha, ':usuario' => $usuario));
+    $resultado = array();
+    while($row = mysql_fetch_array($query)) {
+      $resultado[] = $row;
+    }            
+    return $resultado;
+  }  
+  
   public function getReserva($usuario, $reserva) {
     $query = query("select `id_reserva`, `fecha_reserva`, `hora_prestamo`, `hora_devolucion`, " .
       "`aula`, `descripcion`, `canon`, `laptop` from `reservaciones` where      " .

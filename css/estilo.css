@@ -73,6 +73,19 @@ body, td {
   background: url('../img/error.png') no-repeat 0 -1px;
 }
 
+.no {
+  padding: 0 0 0 20px;
+  color: #cc0000;
+  background: url('../img/exclamation.png') no-repeat;
+}
+
+.si {
+  padding: 0 0 0 20px;
+  color: #4e9a06;
+  background: url('../img/accept.png') no-repeat;
+}
+
+
 h1 {
   margin: 0 0 20px 0;
   padding: 15px 10px 10px 0;
