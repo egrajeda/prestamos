@@ -45,5 +45,14 @@ $vista->regresar = 'mod=reservar';
 $vista->boton    = 'Modificar solicitud';
 $vista->accion   = 'modificar';
 
+/* Ponemos el rango en el que pueden estar las fechas */
+if ($dia == 5) {
+  $vista->fecha_inicial = date('Y-m-d', strtotime('+3 days'));
+  $vista->fecha_final   = date('Y-m-d', strtotime('+9 days'));    
+} else {
+  $vista->fecha_inicial = date('Y-m-d', strtotime('+2 days'));
+  $vista->fecha_final   = date('Y-m-d', strtotime('+8 days'));
+}
+
 presentar('reservar_formulario');
 ?>

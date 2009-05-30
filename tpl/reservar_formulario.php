@@ -2,6 +2,8 @@
   <form method="post" action="index.php?mod=reservar&act=<?php echo $vista->accion ?>">
   <input type="hidden" name="backend" value="1" />
   <input type="hidden" name="id" value="<?php echo $vista->id ?>" />
+  <input id="fini" type="hidden" value="<?php echo $vista->fecha_inicial ?>" />
+  <input id="ffin" type="hidden" value="<?php echo $vista->fecha_final ?>" />  
   <input id="fecha" type="hidden" name="fecha" value="<?php echo $vista->fecha ?>" />
   <table class="form" cellpadding="8" cellspacing="0" border="0">
     <tr>

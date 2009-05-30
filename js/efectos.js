@@ -23,26 +23,25 @@ function insertarCalendario() {
   var s = new Date();
   var f = $('#fecha').val();
   if (f) {
-    var b = new Array();
-    b = f.split('-');
-    s.setFullYear(b[0]);
-    s.setMonth(b[1]-1);
-    s.setDate(b[2]);
-    options.defaultDate = s;
+    options.defaultDate = fechaADate(f);
   }  
   /* Si hay un calendario en la pagina, dependiendo del dia vamos a habilitar
    * las fechas en que puede reservar el equipo */    
-  var d = new Date();
-  if (d.getDay() == 5) {
-    options.minDate = '+3d';
-    options.maxDate = '+9d';  
-  } else if (d.getDay() == 6) {
-    options.minDate = '+2d';
-    options.maxDate = '+8d';  
-  }  
+  options.minDate = fechaADate($('#fini').val());
+  options.maxDate = fechaADate($('#ffin').val());
   $('#date').datepicker(options);
 }
 
 function fechaSeleccionada(d) {
   $("#fecha").val(d);
+}
+
+function fechaADate(f) {
+  var b = new Array();
+  var d = new Date();
+  b = f.split('-');
+  d.setFullYear(b[0]);
+  d.setMonth(b[1]-1);
+  d.setDate(b[2]);
+  return d;
 }
